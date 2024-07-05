@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .card {
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #d3d3d3;
+        }
+        .card-body {
+            text-align: center;
+        }
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .calculator button {
+            width: 100%;
+            height: 60px;
+            font-size: 1.5rem;
+        }
+        .display {
+            grid-column: span 4;
+            height: 60px;
+            font-size: 2rem;
+            text-align: right;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">Calculator</h1>
+    <div class="card mt-5" style="width: 22rem;">
+        <div class="card-body">
+            <div class="calculator">
+                <input type="text" class="display form-control" aria-label="display" value="0" readonly>
+                <button type="button" class="btn btn-danger">CE</button>
+                <button type="button" class="btn btn-danger">C</button>
+                <button type="button" class="btn btn-outline-primary">+/-</button>
+                <button type="button" class="btn btn-outline-primary">÷</button>
+                <button type="button" class="btn btn-outline-secondary">7</button>
+                <button type="button" class="btn btn-outline-secondary">8</button>
+                <button type="button" class="btn btn-outline-secondary">9</button>
+                <button type="button" class="btn btn-outline-primary">x</button>
+                <button type="button" class="btn btn-outline-secondary">4</button>
+                <button type="button" class="btn btn-outline-secondary">5</button>
+                <button type="button" class="btn btn-outline-secondary">6</button>
+                <button type="button" class="btn btn-outline-primary">-</button>
+                <button type="button" class="btn btn-outline-secondary">1</button>
+                <button type="button" class="btn btn-outline-secondary">2</button>
+                <button type="button" class="btn btn-outline-secondary">3</button>
+                <button type="button" class="btn btn-outline-primary">+</button>
+                <button type="button" class="btn btn-outline-secondary">0</button>
+                <button type="button" class="btn btn-outline-secondary">.</button>
+                <button type="button" class="btn btn-outline-secondary" style="grid-column: span 2;">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
