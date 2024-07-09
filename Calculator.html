@@ -62,10 +62,33 @@
                 <button type="button" class="btn btn-outline-primary">+</button>
                 <button type="button" class="btn btn-outline-secondary">0</button>
                 <button type="button" class="btn btn-outline-secondary">.</button>
-                <button type="button" class="btn btn-outline-secondary" style="grid-column: span 2;">=</button>
+                <button type="button" class="btn btn-outline-secondary" style="grid-column: span 2;" onclick="display. value=eval(display.value);">=</button>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        var display = document.querySelector('.display');
+        var buttons = document.querySelectorAll('.btn');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                var btnText = e.target.innerText;
+                if (btnText === 'CE') {
+                    display.value = '0';
+                } else if (btnText === 'C') {
+                    display.value = display.value.slice(0, -1);
+                    if (display.value === '') display.value = '0';
+                } else if (btnText === '=') {
+                    display.value = eval(display.value.replace('÷', '/').replace('x', '*'));
+                } else if (btnText === '+/-') {
+                    display.value = String(-parseFloat(display.value));
+                } else {
+                    if (display.value === '0') display.value = '';
+                    display.value += btnText;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
